@@ -3,11 +3,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title></title>
+    <div class="header">
+      <h2>Header</h2>
+    </div>
   </head>
   <body>
+    <div class="row">
+    <div class='column'style="background-color:#aaa;">
     <table>
-        <thead>
+        <thead>TOP RESTAURENTS
         <tr>
             <th>name</th>
             <th>location</th>
@@ -22,5 +28,43 @@
             {% endfor %}
         </tbody>
     </table>
+  </div>
+  <div class="column" style="background-color:#bbb;">    <table>
+          <thead>The forcast
+          <tr>
+              <th>name</th>
+              <th>location</th>
+          </tr>
+          </thead>
+          <tbody>
+              {% for row in value %}
+                  <tr>
+                      <td>{{row[2]}}</td>
+                      <td>{{row[3]}}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table></div>
+  <div class="column" style="background-color:#ccc;">
+      <table>
+          <thead>Hotels in the Area
+          <tr>
+              <th>name</th>
+              <th>location</th>
+          </tr>
+          </thead>
+          <tbody>
+              {% for row in value %}
+                  <tr>
+                      <td>{{row[2]}}</td>
+                      <td>{{row[3]}}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table></div>
+</div>
   </body>
+  <div class="footer">
+    <p>Footer</p>
+  </div>
 </html>
