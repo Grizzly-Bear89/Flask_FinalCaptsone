@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<title>New York City</title>
+</head>
+
+
+<body>
+
+	{%block content%}
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Easy Travel</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="{{url_for('home')}}">Home</a>
+			</li>
+			<li class="nav-item">
+			        <a class="nav-link" href="{{url_for('miami')}}">Miami</a>
+			</li>
+			<li class="nav-item">
+			        <a class="nav-link" href="{{url_for('newyork')}}">New York</a>
+			</li>
+			<li class="nav-item">
+			        <a class="nav-link" href="{{url_for('losangeles')}}">Los Angeles</a>
+			</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container center div">
+		<h1>Your Vacation to New York City Starts Here!</h1>
+		<div class="p-3 mb-2 bg-secondary text-white">
+			<p>
+				The city is known for its multi-ethnic population and diversity in cultural traditions. With a varied mix of traditions brought in by millions of immigrants, 
+				ranging from theater, dance, cuisine, and literature, there are a lot of different kinds of traditions to keep yourself occupied. The multi-ethnic population
+				is divided into certain districts, one of the most notable examples being Chinatown, and the city hosts numerous parades to celebrate the amount of diversity
+				it offers. New York City is a crowded place, so be sure to keep in mind to respect personal space and stay in between the lines.
+			</p>
+		</div>
+	</div>
+
+<style type="text/css">
+.table {
+	margin: 0 auto;
+	width: 80%;
+}
+</style>
+
+<div class="container center div">
+	<div class="accordion accordion-flush" id="accordionFlushExample" style="background-color:grey">
+		<div class="accordion-item border border-light">
+			<h2 class="accordion-header" id="flush-headingOne">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" style="background-color:grey" aria-expanded="false" aria-controls="flush-collapseOne">
+					Local Weather
+				</button>
+			</h2>
+			<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+				 <div class="accordion-body">
+					 <strong>New York City Weather</strong>
+					 <p>	New York City is known for following a seasonal schedule in terms of weather, so expect the weather to be relatively hot and moist during the summer, 
+					 	and to be chilly during the winter. The most common weather condition in New York is partly cloudy to rain, so be sure to come prepared for rainy conditions. 
+					 	The average temperature in New York during the summer ranges from around 80-60, with the highest temperature being 84 and the lowest temperature being 69. 
+						The perfect weather we recommend you to be out and about New York City is a nice sunny day out with the temperature being around high 60s or low 70s, 
+						so be sure to plan accordingly if you plan on visiting New York City! 
+					 </p>
+
+	
+	<div class="column">
+		<table class="table table-dark table-striped table-bordered">
+			<strong>April 29 - May 3</strong>
+			<thead>
+			<tr>
+				<th>Day     </th>
+			        	<th>Temprature</th>
+					<th>Max_Temprature</th>
+				  	<th>Min_Temprature</th>
+					<th>Feels_Like</th>
+					<th>Humidity</th>
+					<th>Sky</th>
+					<th>Wind</th>
+			</tr>
+			</thead>
+			<tbody>
+				{% for row in value %}
+					<tr>
+						<td>Friday, April 29</td>
+						<td>{{row[1]}}</td>
+						<td>{{row[2]}}</td>
+						<td>{{row[3]}}</td>
+						<td>{{row[4]}}</td>
+						<td>{{row[5]}}</td>
+						<td>{{row[6]}}</td>
+						<td>{{row[7]}}</td>
+					</tr>
+					<br></br>
+	                                         <tr>
+	                                                 <td>Saturday, May 1</td>
+							 <td>{{row[8]}}</td>
+							 <td>{{row[9]}}</td>
+							 <td>{{row[10]}}</td>
+							 <td>{{row[11]}}</td>
+	                                                 <td>{{row[12]}}</td>
+							 <td>{{row[13]}}</td>
+							 <td>{{row[14]}}</td>
+						 </tr>
+					<br></br>
+						<tr>
+							<td>Sunday, May 2</td>
+							<td>{{row[15]}}</td>
+							<td>{{row[16]}}</td>
+							<td>{{row[17]}}</td>
+							<td>{{row[18]}}</td>
+							<td>{{row[19]}}</td>
+							<td>{{row[20]}}</td>
+							<td>{{row[21]}}</td>
+						</tr>
+					<br></br>
+						<tr>
+							<td>Monday, May 3</td>
+							<td>{{row[22]}}</td>
+							<td>{{row[23]}}</td>
+							<td>{{row[24]}}</td>
+							<td>{{row[25]}}</td>
+							<td>{{row[26]}}</td>
+							<td>{{row[27]}}</td>
+							<td>{{row[28]}}</td>
+						</tr>
+
+				{% endfor %}
+			</tbody>
+		</table></div>
+	</div>
+	<br></br>
+	<strong>Average New York Temperature</strong>
+	<br></br>
+	<div class="column">
+		<table class="table table-dark table-striped table-bordered">
+			<thead>
+			<tr>
+				<th>Avg Temp</th>
+				<th>Avg Max</th>
+				<th>Avg Min</th>
+				<th>Avg Wind Speed</th>
+			</tr>
+			</thead>
+			<tbody>
+				{% for row in value3 %}
+					<tr>
+						<td>{{row[6]}}</td>
+						<td>{{row[7]}}</td>
+						<td>{{row[8]}}</td>
+						<td>{{row[5]}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table></div>
+				 </div>
+			</div>
+		
+<div class="accordion-item border border-light">
+	<h2 class="accordion-header" id="flush-headingTwo">
+		<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" style="background-color:grey" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+			Local Eats
+		</button>
+	</h2>
+	<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+		<div class="accordion-body">
+			<strong>Taste of New York City</strong>
+			<p>
+			Some of the food popularized in New York City has its own New York style associated with it, with some examples being bagels, pizza, pastrami, and cheesecake. 
+			There is also Manhattan clam chowder and eggs benedict. Nevertheless, New York City like its overall culture offers diversity in its cuisine. One day you could be
+			having Italian food and then the next day you could be having Latino food. New York City in terms of food is all about the different kinds of choices you have in what
+			to eat, so feel free to try all sorts of different kinds of food and expand your palette!
+			</p>
+	<div class="column">
+		<table class="table table-dark table-striped table-bordered">
+			<thead>Resturants
+			<tr>
+				<th>Restaurant</th>
+				<th>Address</th>
+			</tr>
+			</thead>
+			<tbody>
+				{% for row in value1 %}
+					<tr>
+						<td>{{row[2]}}</td>
+						<td>{{row[3]}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+		</div>
+	</div>
+	<div class="accordion-item border border-light">
+		 <h2 class="accordion-header" id="flush-headingThree">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" style="background-color:grey"  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+				  Stay
+			  </button>
+		 </h2>
+		 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+			 <div class="accordion-body">
+				 <strong>New York City Stays:</strong> 
+			<div class="column">
+				<table class="table table-dark table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Hotel Name</th>
+							<th>Rating</th>
+							<th>Number</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for row in value2 %}
+							<tr>
+								<td>{{row[0]}}</td>
+								<td>{{row[1]}}</td>
+								<td>{{row[2]}}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			 </div>
+		 </div>
+	</div>
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</body>
+
+<style>
+	body{
+		background-color: #212121;
+		color: white;
+	}
+</style>
+{% endblock content %}
+</html>
