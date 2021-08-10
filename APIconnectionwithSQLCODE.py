@@ -8,7 +8,7 @@ cnx =mysql.connector.connect(host="localhost",  # your host
 cur = cnx.cursor()
 
 
-api_key = 'AIzaSyDvGRRQTHsY_NCabKqX48wBTgpp2M3REnI'
+api_key = #'APIKEYWILLGOHERE'
 
 url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
 
